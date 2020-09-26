@@ -45,9 +45,11 @@
                         </div>
                         <div class="collapse navbar-collapse" id="navbar">
                           <?php
-                              wp_nav_menu( array (
-                                  'theme_location'    => 'navbar-left',
-                                  'menu_class'        => 'navbar-nav--left'
+                              wp_nav_menu (
+                                  array (
+                                    'theme_location'    => 'navbar-left',
+                                    'menu_class'        => 'navbar-nav--left'
+                                  )
                               );
                           ?>
                           <div class="menu-brand show--desktop">
@@ -56,9 +58,11 @@
                             </a>
                           </div>
                           <?php
-                            wp_nav_menu( array(
-                                'theme_location'    => 'navbar-right',
-                                'menu_class'        => 'menu-social--social')
+                            wp_nav_menu(
+                                array(
+                                  'theme_location'    => 'navbar-right',
+                                  'menu_class'        => 'navbar-nav--right'
+                                )
                             );
                           ?>
                       </div><!-- /.navbar-collapse -->
