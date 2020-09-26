@@ -1,0 +1,135 @@
+.body {
+  color: $primary;
+  @include bodyText;
+  @include font(16px);
+
+  &--bd {
+    @include bodyBd;
+  }
+
+  &--gray {
+    color: $gray-92;
+  }
+
+  &--s {
+    @include font(14px);
+  }
+
+  &--m {
+    @include font(18px);
+  }
+
+  &--black {
+    color: $black;
+  }
+
+  &--gold {
+    color: $secondary;
+  }
+
+  &--white {
+    color:$white;
+  }
+
+  &--gray {
+    color: $gray-text;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.headline {
+  color: $primary;
+  @include bodyText;
+  @include font(20px);
+
+  &--bd {
+    @include bodyBd;
+  }
+
+  &--big {
+    @include font(60px);
+
+    @include from(l) {
+      @include font(100px);
+    }
+  }
+
+  &--white {
+    color:$white;
+  }
+
+  &--gray {
+    color: $gray-92;
+  }
+
+  &--gold {
+    color: $secondary;
+  }
+
+  &--black {
+    color: $black;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.eyebrow {
+  color: $primary;
+  letter-spacing: rem(2px);
+  @include secondaryText;
+  @include font(15px);
+
+  @include from(l) {
+    @include font(36px);
+    letter-spacing: rem(3px);
+  }
+
+  &--white {
+    color:$white;
+  }
+
+  &--gray {
+    color: $gray-92;
+  }
+
+  &--gold {
+    color: $secondary;
+  }
+
+  &--black {
+    color: $black;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}

@@ -39,28 +39,28 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
-                                <h1 class="brand-image">Magnostore</h1>
+                            <a class="navbar-brand show--mobile" href="<?php echo home_url('/'); ?>">
+                                <h1 class="brand-image brand-image--mobile">Magnostore</h1>
                             </a>
                         </div>
                         <div class="collapse navbar-collapse" id="navbar">
                           <?php
                               wp_nav_menu( array (
                                   'theme_location'    => 'navbar-left',
-                                  'depth'             => 2,
-                                  'menu_class'        => 'nav navbar-nav navbar-nav--left',
-                                  'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                                  'walker'            => new wp_bootstrap_navwalker())
+                                  'menu_class'        => 'navbar-nav--left'
                               );
-                              ?>
-                          <div class="menu-social">
-                          <?php
-                              wp_nav_menu( array(
-                                  'theme_location'    => 'social-menu',
-                                  'menu_class'        => 'menu-social--social')
-                              );
-                            ?>
+                          ?>
+                          <div class="menu-brand show--desktop">
+                            <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
+                              <h1 class="brand-image brand--desktop">Magnostore</h1>
+                            </a>
                           </div>
+                          <?php
+                            wp_nav_menu( array(
+                                'theme_location'    => 'navbar-right',
+                                'menu_class'        => 'menu-social--social')
+                            );
+                          ?>
                       </div><!-- /.navbar-collapse -->
                   </div>
               </div><!-- /.container -->

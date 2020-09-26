@@ -168,4 +168,5 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 }
 
 register_nav_menu('navbar-left', __('Main menu (left)', 'bst'));
-register_nav_menu('social-menu', __('Social Network Menu', 'bst'));
+register_nav_menu('navbar-right', __('Main menu (right)', 'bst'));
+register_nav_menu('social-menu', __('Category menu', 'bst'));

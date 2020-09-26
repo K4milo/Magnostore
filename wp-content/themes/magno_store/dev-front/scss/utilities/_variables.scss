@@ -1,0 +1,58 @@
+// Colors
+$black: #000000;
+$white: #ffffff;
+$primary: #BAA053;
+$secondary: #294A4E;
+$gray-active: #1e1e1d;
+$gray-lighter: #F0F0F0;
+$gray-text: #8898aa;
+$gray-disabled: #4d4d4d;
+$text-body: #666464;
+$gray-lt: #EAEAED;
+$gray-29: #292929;
+$gray-53: #5E5E5E;
+$gray-ac: #ACA39A;
+$gray-92: #929292;
+$gray-c6: #C6C6C6;
+$gray-75: #757575;
+$gray-6e: #6E6E6E;
+$gray-50: #505050;
+$gray-df: #DFDFDF;
+
+
+// Font weights
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Breakpoints
+
+// font families
+$primary-font: 'Baskerville', sans-serif;
+$secondary-font: 'Biko', sans-serif;
+
+$breakpoints-min: ('s': 576px,
+  'm': 768px,
+  'l': 992px,
+  'xl': 1470px,
+);
+$breakpoints-max: ('xs': map-get($breakpoints-min, 's') - 1px,
+  's': map-get($breakpoints-min, 'm') - 1px,
+  'm': map-get($breakpoints-min, 'l') - 1px,
+  'l': map-get($breakpoints-min, 'xl') - 1px,
+);
+
+// Layout
+
+$grid-columns: 6;
+$grid-columns-m: 12;
+
+$grid-min-offset: 40px;
+$grid-gutter: 30px;
+$grid-gutter-xl: 50px;
+
+$container-max-widths: ('s': 540px,
+  'm': 720px,
+  'l': 960px,
+  'xl': 1320px,
+);
