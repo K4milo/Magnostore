@@ -6,5 +6,6 @@
   */
 
   get_header();
-
+  get_template_part('includes/banners/banner', 'hero');
+  get_template_part('includes/banners/banner', 'callout');
   get_footer();

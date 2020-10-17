@@ -1,24 +1,29 @@
 @mixin bodyText {
-  font-family: $primary;
+  font-family: $primary-font;
   font-weight: 400;
 }
 
-@mixin bodySm {
-  font-family: $primary;
+@mixin bodyMd {
+  font-family: $primary-font;
   font-weight: 600;
 }
 
 @mixin bodyBd {
-  font-family: $primary;
+  font-family: $primary-font;
   font-weight: 700;
 }
 
 @mixin secondaryText {
-  font-family: $secondary;
+  font-family: $secondary-font;
   font-weight: 400;
 }
 
+@mixin secondaryMd {
+  font-family: $secondary-font;
+  font-weight: 600;
+}
+
 @mixin secondaryBd {
-  font-family: $secondary;
+  font-family: $secondary-font;
   font-weight: 700;
 }

@@ -25,51 +25,60 @@
     <div id="page" class="hfeed site">
         <?php do_action( 'storefront_before_header' ); ?>
 
-        <header id="masthead" class="site-header" role="banner">
+        <header id="masthead" class="site-header py-0" role="banner">
 
-              <nav class="site-header__nav navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="row-header">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed"
-                              data-toggle="collapse"
-                                data-target="#navbar">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand show--mobile" href="<?php echo home_url('/'); ?>">
-                                <h1 class="brand-image brand-image--mobile">Magnostore</h1>
-                            </a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="navbar">
-                          <?php
-                              wp_nav_menu (
-                                  array (
-                                    'theme_location'    => 'navbar-left',
-                                    'menu_class'        => 'navbar-nav--left'
-                                  )
-                              );
-                          ?>
-                          <div class="menu-brand show--desktop">
-                            <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
-                              <h1 class="brand-image brand--desktop">Magnostore</h1>
-                            </a>
-                          </div>
-                          <?php
-                            wp_nav_menu(
-                                array(
-                                  'theme_location'    => 'navbar-right',
-                                  'menu_class'        => 'navbar-nav--right'
+          <nav class="site-header__nav navbar navbar-expand-lg navbar-default px-0">
+            <div class="container-fluid">
+              <div class="header w-100">
+                  <div class="navbar-header px-3">
+                    <a class="navbar-brand show--mobile" href="<?php echo home_url('/'); ?>">
+                      <h1 class="brand-image brand--mobile">Magnostore</h1>
+                    </a>
+                    <button class="navbar-toggler site-header__btn"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#navbarTogglerMain"
+                      aria-controls="navbarTogglerMain"
+                      aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon">
+                        <span class="material-icons">menu</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="collapse navbar-collapse"
+                      id="navbarTogglerMain">
+                    <div class="main-menu">
+                      <div class="main-menu-item main-menu__left">
+                        <?php
+                            wp_nav_menu (
+                                array (
+                                  'theme_location'    => 'navbar-left',
+                                  'menu_class'        => 'navbar-nav--left'
                                 )
                             );
-                          ?>
-                      </div><!-- /.navbar-collapse -->
-                  </div>
-              </div><!-- /.container -->
+                        ?>
+                      </div>
+                      <div class="main-menu-item main-menu__brand show--desktop">
+                        <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
+                          <h2 class="brand-image brand--desktop">Magnostore</h2>
+                        </a>
+                      </div>
+                      <div class="main-menu-item main-menu__right">
+                        <?php
+                          wp_nav_menu(
+                              array(
+                                'theme_location'    => 'navbar-right',
+                                'menu_class'        => 'navbar-nav--right'
+                              )
+                          );
+                        ?>
+                      </div>
+                    </div>
+                </div><!-- /.navbar-collapse -->
+              </div>
+            </div><!-- /.container -->
           </nav>
-      </header><!-- #masthead -->
+        </header><!-- #masthead -->
 
         <?php
 /**

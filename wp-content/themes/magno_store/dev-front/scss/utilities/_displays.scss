@@ -1,0 +1,17 @@
+.show {
+  &--mobile {
+    display: block;
+
+    @include from(l) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include from(l) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &-item {
+    width: 100%;
+
+    @include from(l) {
+      width: 33.3%;
+    }
+  }
+
+  &__brand {
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    @include from(l) {
+      text-align: center;
+    }
+
+    li {
+      display: block;
+
+      @include from(l) {
+        display: inline-block;
+      }
+
+      a {
+        display: block;
+        color: $secondary;
+        @include secondaryMd;
+        text-transform: uppercase;
+        padding: rem(6px) rem(16px);
+      }
+    }
+  }
+}

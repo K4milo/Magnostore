@@ -6,7 +6,7 @@ function magno_child_assets() {
   //enqueue bootstrap in the child theme
 
   wp_enqueue_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', false, NULL, 'all');
-
+  wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons', false, NULL, 'all');
   // Styles
   $theme_info = wp_get_theme();
 

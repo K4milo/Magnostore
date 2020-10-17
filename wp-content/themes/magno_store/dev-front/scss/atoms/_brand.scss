@@ -1,0 +1,17 @@
+.brand {
+  &-image {
+    @include iconBg('../images/brand/logo.svg');
+  }
+
+  &--mobile {
+    width: rem(88px);
+    height: rem(106px);
+  }
+
+  &--desktop {
+    margin: rem(22px) 0;
+    width: rem(140px);
+    height: rem(130px);
+    display: inline-block;
+  }
+}

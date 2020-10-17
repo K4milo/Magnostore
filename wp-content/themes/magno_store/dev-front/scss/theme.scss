@@ -2,6 +2,7 @@
 @import 'utilities/fonts';
 @import 'utilities/variables';
 @import 'utilities/mixins';
+@import 'utilities/displays';
 
 // 2-QUARKS
 @import 'quarks/typography';
@@ -11,9 +12,11 @@
 // 3-ATOMS
 @import 'atoms/buttons';
 @import 'atoms/forms';
+@import 'atoms/brand';
 
 // 4-MOLECULES
 @import 'molecules/header';
+@import 'molecules/menu';
 @import 'molecules/footer';
 
 // 5-PAGES
