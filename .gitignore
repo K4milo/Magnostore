@@ -4,11 +4,11 @@ wp-config.php
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
-wp-content/*
+wp-content/uploads/
+wp-content/plugins/
 !wp-content/mu-plugins/
-!wp-content/plugins/
 !wp-content/themes/
-
+wp-config.php
 # ignore these plugins
 wp-content/plugins/hello.php
 
@@ -23,3 +23,5 @@ node_modules
 *.log
 *.sql
 *.sqlite
+*.htaccess
+.htaccess
