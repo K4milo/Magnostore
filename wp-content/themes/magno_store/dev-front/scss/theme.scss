@@ -13,11 +13,14 @@
 @import 'atoms/buttons';
 @import 'atoms/forms';
 @import 'atoms/brand';
+@import 'atoms/images';
 
 // 4-MOLECULES
 @import 'molecules/header';
 @import 'molecules/menu';
 @import 'molecules/footer';
+@import 'molecules/hero-banner';
+@import 'molecules/breadcrumbs';
 
 // 5-PAGES
 @import 'pages/home';

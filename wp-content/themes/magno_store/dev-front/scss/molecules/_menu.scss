@@ -42,3 +42,44 @@
     }
   }
 }
+
+.menu {
+  &--cat {
+    overflow: hidden;
+    padding: rem(10px) 0 rem(5px);
+    border-top: rem(2px) solid $secondary;
+    border-bottom: rem(2px) solid $secondary;
+
+    @include from(l) {
+      padding: rem(20px) 0 rem(16px);
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: baseline;
+      margin: 0;
+      justify-content: flex-start;
+      white-space: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+
+      @include from(l) {
+        justify-content: center;
+        overflow: auto;
+      }
+    }
+
+    &__item {
+      padding: 0 rem(20px);
+      display: block;
+      flex-basis: 0;
+      flex-grow: 1;
+
+      @include from(l) {
+        padding: 0 rem(45px);
+        flex: 0 0 1;
+      }
+    }
+  }
+}
