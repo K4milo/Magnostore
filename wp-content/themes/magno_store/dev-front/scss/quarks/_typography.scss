@@ -33,10 +33,18 @@
 
   &--m {
     @include font(18px);
+
+    @include from(l) {
+      @include font(21px);
+    }
   }
 
-  &--m {
+  &--l {
     @include font(24px);
+
+    @include from(l) {
+      @include font(26px);
+    }
   }
 
   &--black {

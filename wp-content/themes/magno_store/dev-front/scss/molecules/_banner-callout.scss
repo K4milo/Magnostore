@@ -1,0 +1,19 @@
+.callout-banner {
+  &__item {
+    padding-top: rem(40px);
+    padding-bottom: rem(40px);
+
+    @include from(l) {
+      padding-top: rem(100px);
+      padding-bottom: rem(100px);
+    }
+  }
+
+  &__caption {
+    padding-top: rem(60px);
+
+    @include from(l) {
+      padding-top: 0;
+    }
+  }
+}

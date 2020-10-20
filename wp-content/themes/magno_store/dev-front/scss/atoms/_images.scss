@@ -7,4 +7,40 @@
       object-fit: contain;
     }
   }
+
+  &--outlined {
+    position: relative;
+
+    img {
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      @include coverAbsolute(0);
+      height: calc(100% + 40px);
+      border: rem(1px) solid $secondary;
+      top: rem(-20px);
+      left: rem(-20px);
+
+      @include from(l) {
+        top: rem(-40px);
+        left: rem(-40px);
+        height: calc(100% + 80px);
+      }
+    }
+
+    &-right {
+      &::after {
+        left: unset;
+        right: rem(-20px);
+
+        @include from(l) {
+          right: rem(-40px);
+        }
+      }
+    }
+  }
 }

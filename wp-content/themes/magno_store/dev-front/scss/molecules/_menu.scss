@@ -9,12 +9,16 @@
     width: 100%;
 
     @include from(l) {
-      width: 33.3%;
+      width: 26%;
     }
   }
 
   &__brand {
     text-align: center;
+
+    @include from(l) {
+      width: 16%;
+    }
   }
 
   ul {
