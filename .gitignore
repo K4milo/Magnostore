@@ -4,15 +4,11 @@ wp-config.php
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
-wp-content/uploads/
-wp-content/plugins/
+wp-content/uploads
+wp-content/plugins
 !wp-content/mu-plugins/
 !wp-content/themes/
-wp-config.php
 # ignore these plugins
-wp-content/plugins
-plugins
-wp-content/languages/themes/twentytwenty*
 wp-content/languages/*
 # ignore specific themes
 wp-content/themes/twenty*
