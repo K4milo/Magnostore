@@ -15,7 +15,7 @@ if ($clean_banner ) :
     <div class="row">
       <div class="col-md-6">
         <figure class="clean-banner__image">
-          <img src="<?php echo $clean_image['url']; ?>" class="image-fit--cover" alt="<?php echo $clean_image['alt']; ?>" />
+          <img src="<?php echo $clean_image['url']; ?>" class="image-fit--cover" alt="<?php echo $clean_image['alt']; ?>" data-wow-duration=".5s" data-wow-delay=".5s" />
         </figure>
       </div>
       <div class="col-md-6">

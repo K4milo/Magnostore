@@ -23,7 +23,7 @@ if ($callout_banner):
           <div class="col-md-5 <?php echo ($callout_align == 'left') ? 'offset-md-1' : ''; ?>">
             <figure class="callout-banner__image">
               <div class="image--outlined image--outlined<?php echo ($callout_align == 'left') ? '-right' : ''; ?>">
-                <img src="<?php echo $callout_image['url']; ?>" class="image-fit--cover" alt="<?php echo $callout_image['alt']; ?>" />
+                <img src="<?php echo $callout_image['url']; ?>" class="image-fit--cover wow animate__flipInY" alt="<?php echo $callout_image['alt']; ?>" />
               </div>
             </figure>
           </div>

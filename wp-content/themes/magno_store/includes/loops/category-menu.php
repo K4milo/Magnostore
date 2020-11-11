@@ -1,5 +1,5 @@
 <div class="menu--cat">
-  <nav role="subnav" class="container">
+  <nav role="subnav" class="container-fluid">
     <ul class="menu--cat__wrapper">
       <?php
 
@@ -13,7 +13,7 @@
         'orderby' => 'name',
         'order' => 'ASC',
         'hide_empty' => true,
-        'exclude' => [15,31,38,33,37,36,28,27]
+        'exclude' => [15,31,38,33,37,36,28,27,40,41]
       ];
 
       $categories = get_categories($args);

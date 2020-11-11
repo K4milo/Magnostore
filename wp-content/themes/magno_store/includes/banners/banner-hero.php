@@ -29,7 +29,7 @@ if ($hero_banner) {
           endif;
         ?>
       </figure>
-      <div class="hero-banner__caption">
+      <div class="hero-banner__caption text-align-center">
         <h3 class="hero-banner__title">
           <span class="d-block eyebrow eyebrow--uppercase eyebrow--bd tipo-line--1"><?php echo $hero_title; ?></span>
           <span class="d-block headline headline--italic headline--big tipo-line--08"><?php echo $hero_sub_title; ?></span>
