@@ -1,0 +1,83 @@
+.multistep {
+  background-color: $gray-lighter;
+
+  &__heading {
+    padding-top: rem(10px);
+    padding-bottom: rem(16px);
+
+    @include from(l) {
+      padding-top: rem(30px);
+      padding-bottom: rem(30px);
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__item {
+    padding-top: rem(30px);
+    padding-bottom: rem(30px);
+  }
+
+  &__box {
+    background-color: $white;
+    margin-top: rem(20px);
+    margin-bottom: rem(20px);
+    position: relative;
+    text-align: center;
+    transition: all .3s;
+
+    input {
+      cursor: pointer;
+      opacity: .02;
+      @include coverAbsolute(1);
+    }
+
+    &.active {
+      background-color: $secondary;
+      transform: scale(1.05);
+
+      .multistep__label {
+        color: $white;
+      }
+    }
+
+    &--cloned {
+      width: rem(120px);
+      height: rem(120px);
+      padding: 0;
+
+      span {
+        background-color: $secondary;
+        color: $white;
+        position: absolute;
+        cursor: pointer;
+        z-index: 2;
+        top: rem(-5px);
+        left: rem(-5px);
+
+        &:hover {
+          background-color: red;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    padding-top: rem(16px);
+    padding-bottom: rem(30px);
+
+    @include from(l) {
+      padding-top: rem(30px);
+      padding-bottom: rem(30px);
+    }
+  }
+
+  &__products {
+    align-items: flex-start;
+    align-items: stretch;
+  }
+}

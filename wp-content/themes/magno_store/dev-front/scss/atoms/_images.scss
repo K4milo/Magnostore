@@ -8,6 +8,27 @@
     }
   }
 
+  &__ar {
+
+    &--11 {
+      @include fluid-aspect(1 1, img);
+    }
+
+    &--cover {
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &--contain {
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
   &--outlined {
     position: relative;
 

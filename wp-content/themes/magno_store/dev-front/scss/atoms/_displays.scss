@@ -1,0 +1,15 @@
+.hidden {
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
+  transition: all .3s;
+  visibility: hidden;
+}
+
+.show {
+  height: auto;
+  transition: all .3s;
+  opacity: 1;
+  overflow: initial;
+  visibility: visible;
+}

@@ -1,39 +1,23 @@
-<fieldset class="multistep__item" data-step="1">
+<fieldset class="multistep__item show js-step" data-step="1">
   <div class="container">
-    <header class="multistep__heading text-center">
-      <h3 class="header">Elige una caja</h3>
+    <header class="multistep__heading">
+      <h3 class="multistep__title">
+        <span class="d-block eyebrow eyebrow--uppercase eyebrow--bd tipo-line--1">Elige</span>
+        <span class="d-block headline headline--med headline--italic tipo-line--08">El color de tu caja</span>
+      </h3>
     </header>
     <div class="multistep__boxes">
-      <div class="row">
-        <div class="col-2 col-md-3">
-          <div class="multistep__box">
-            <input type="radio" id="black" name="box" value="black">
-            <label for="black">Negra</label>
-          </div>
-        </div>
-        <div class="col-2 col-md-3">
-          <div class="multistep__box">
-            <input type="radio" id="white" name="box" value="white">
-            <label for="white">Blanca</label>
-          </div>
-        </div>
-        <div class="col-2 col-md-3">
-          <div class="multistep__box">
-            <input type="radio" id="grey" name="box" value="grey">
-            <label for="grey">Gris</label>
-          </div>
-        </div>
-        <div class="col-2 col-md-3">
-          <div class="multistep__box">
-            <input type="radio" id="green" name="box" value="green">
-            <label for="green">Verde</label>
-          </div>
-        </div>
-      </div>
+      <?php
+        /**
+         * Call input products loop
+         *
+         */
+        get_template_part('includes/loops/boxes', 'form'); ?>
     </div>
-    <div class="multistep__actions">
-      <button class="multistep__next button">
-        <span class="button__content" tabindex="-1">Escoge tus productos</span>
+    <div class="multistep__actions multistep__actions--center">
+      <button class="multistep__next button button--icon js-next" type="button">
+        <span class="eyebrow eyebrow--1 eyebrow--uppercase button__content" tabindex="-1">Añadir Productos</span>
+        <span class="button__icon material-icons">keyboard_arrow_right</span>
       </button>
     </div>
   </div>

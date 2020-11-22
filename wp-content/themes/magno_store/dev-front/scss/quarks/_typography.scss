@@ -97,11 +97,23 @@
     @include secondaryText;
 
     &--bd {
-      @include secondaryMd;
-    }
-
-    &--bd {
       @include secondaryBd;
+    }
+  }
+
+  &--tertiary {
+    @include font(18px);
+
+    @include from(l) {
+      @include font(25px);
+    }
+  }
+
+  &--med {
+    @include font(40px);
+
+    @include from(l) {
+      @include font(60px);
     }
   }
 
@@ -154,19 +166,33 @@
   color: $primary;
   letter-spacing: rem(2px);
   @include secondaryText;
-  @include font(15px);
+  @include font(18px);
 
   @include from(l) {
     @include font(36px);
     letter-spacing: rem(3px);
   }
 
-  &--bd {
-    @include secondaryMd;
+  &--1 {
+    @include font(14px);
+
+    @include from(l) {
+      @include font(18px);
+      letter-spacing: rem(3px);
+    }
+  }
+
+  &--med {
+    @include font(16px);
+
+    @include from(l) {
+      @include font(25px);
+      letter-spacing: rem(3px);
+    }
   }
 
   &--bd {
-    @include secondaryBd;
+    @include secondaryMd;
   }
 
   &--white {
