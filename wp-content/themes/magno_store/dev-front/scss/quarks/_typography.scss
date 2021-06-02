@@ -118,10 +118,10 @@
   }
 
   &--big {
-    @include font(60px);
+    @include font(30px);
 
     @include from(l) {
-      @include font(100px);
+      @include font(50px);
     }
   }
 
@@ -166,10 +166,10 @@
   color: $primary;
   letter-spacing: rem(2px);
   @include secondaryText;
-  @include font(18px);
+  @include font(16px);
 
   @include from(l) {
-    @include font(36px);
+    @include font(20px);
     letter-spacing: rem(3px);
   }
 
@@ -178,6 +178,15 @@
 
     @include from(l) {
       @include font(18px);
+      letter-spacing: rem(3px);
+    }
+  }
+
+  &--2 {
+    @include font(12px);
+
+    @include from(l) {
+      @include font(14px);
       letter-spacing: rem(3px);
     }
   }

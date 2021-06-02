@@ -1,10 +1,13 @@
 const SELECTORS = {
+  btnFirst: '.js-first',
   steps: '.js-step',
   prev: '.js-prev',
   next: '.js-next',
   removeProd: '.js-remove-prod',
   prodThumb: '.js-prod-thumb',
   prodBar: '.js-products',
+  prodBox: '.js-box-bar',
+  prodCard: '.js-card-bar',
   cloned: '.js-cloned'
 }
 
@@ -76,17 +79,24 @@ class MultiStep {
 
 class InputHandler {
   constructor (context, input) {
+    this.btnFirst = null
     this.context = context
     this.input = input
     this.inputs = null
     this.prodBar = null
+    this.prodBox = null
+    this.prodCard = null
     this.prodClones = null
     this.prodId = null
+    this.prodType = null
   }
 
   init () {
     this.inputs = [...this.context.querySelectorAll(this.input)]
     this.prodBar = this.context.querySelector(SELECTORS.prodBar)
+    this.prodBox = this.context.querySelector(SELECTORS.prodBox)
+    this.prodCard = this.context.querySelector(SELECTORS.prodCard)
+    this.btnFirst = this.context.querySelector(SELECTORS.btnFirst)
     this.suscribe()
   }
 
@@ -103,6 +113,7 @@ class InputHandler {
 
   inputEvents (parent, input) {
     this.prodId = parent.dataset.id
+    this.prodType = parent.dataset.type
     const inputsWrapper = parent.parentNode.parentNode
     const allInputs = [...inputsWrapper.querySelectorAll(this.input)]
     const inputType = input.getAttribute('type')
@@ -114,8 +125,9 @@ class InputHandler {
         })
       }
       parent.classList.add('active')
+      this.btnFirst.classList.remove('hidden')
 
-      this.handleClone(parent, this.prodId, inputType)
+      this.handleClone(parent, this.prodId, this.prodType)
     } else {
       parent.classList.remove('active')
       this.handleRemove(this.prodId)
@@ -124,7 +136,7 @@ class InputHandler {
 
   handleClone (input, id, type) {
     const thumbClone = input.querySelector(SELECTORS.prodThumb).cloneNode(true)
-    const inputName = input.getAttribute('name')
+    const prodType = type
     const closeIcon = document.createElement('span')
 
     thumbClone.classList.add(CLASSES.cloned)
@@ -139,12 +151,6 @@ class InputHandler {
     if (this.prodClones) {
       this.prodClones.forEach(product => {
         const prodId = product.dataset.id
-        const prodInputName = product.getAttribute('name')
-
-        if (type === 'radio' && prodInputName === inputName) {
-          product.remove()
-        }
-
         if (prodId === id) {
           product.remove()
         }
@@ -153,7 +159,16 @@ class InputHandler {
       this.cloneEvents(this.prodBar)
     }
 
-    this.prodBar.appendChild(thumbClone)
+    if (prodType === 'product') {
+      this.prodBar.appendChild(thumbClone)
+    } else if (prodType === 'box') {
+      if (this.prodBox.hasChildNodes()) this.prodBox.innerHTML = ''
+      this.prodBox.appendChild(thumbClone)
+    } else {
+      if (this.prodCard.hasChildNodes()) this.prodCard.innerHTML = ''
+      this.prodCard.innerHTML = ''
+      this.prodCard.appendChild(thumbClone)
+    }
   }
 
   handleRemove (id) {

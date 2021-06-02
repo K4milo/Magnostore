@@ -7,6 +7,7 @@ function magno_child_assets() {
 
   wp_enqueue_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', false, NULL, 'all');
   wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons', false, NULL, 'all');
+  wp_enqueue_style('font-icons', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', false, NULL, 'all');
   wp_enqueue_style('animate-css', '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', false, NULL, 'all');
 
   // Styles

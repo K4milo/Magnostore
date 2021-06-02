@@ -14,4 +14,16 @@
     height: rem(130px);
     display: inline-block;
   }
+
+  &--green {
+    @include iconBg('../images/brand/logo-green.svg');
+    width: rem(88px);
+    height: rem(106px);
+
+    @include from(l) {
+      width: rem(140px);
+      height: rem(130px);
+      margin-bottom: rem(30px);
+    }
+  }
 }

@@ -16,12 +16,13 @@ $nav_i = 0;
 $tab_i = 0;
 
 ?>
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<ul class="nav nav-pills multistep__nav" id="pills-tab" role="tablist">
   <?php
     foreach($categories as $prod_cat): ?>
-  <li class="nav-item">
+  <li class="nav-item multistep__nav-item">
     <a
-      class="nav-link <?php echo ($nav_i == 0) ? 'active' : ''; ?>"
+      class="nav-link <?php echo ($nav_i == 0) ? 'active' : ''; ?> button button--negative
+      eyebrow eyebrow--2 eyebrow--uppercase button__content multistep__nav-link"
       id="pills-<?php echo $prod_cat->slug; ?>-tab"
       data-toggle="pill"
       href="#pills-<?php echo $prod_cat->slug; ?>"
@@ -43,7 +44,7 @@ foreach($categories as $prod_cat):?>
     aria-labelledby="pills-<?php echo $prod_cat->slug; ?>-tab">
 
     <div class="multistep__category text-center" id="<?php echo $prod_cat->slug; ?>">
-      <h4 class="headline headline--secondary"><?php echo $prod_cat->name; ?></h4>
+      <h4 class="headline headline--med headline--italic tipo-line--08"><?php echo $prod_cat->name; ?></h4>
     </div>
     <div class="row">
 
@@ -71,15 +72,15 @@ foreach($categories as $prod_cat):?>
             $price = get_post_meta(get_the_ID(), '_price', true); ?>
 
       <div class="col-6 col-md-3">
-        <div class="multistep__box js-wizard-input" data-id="<?php the_ID(); ?>">
+        <div class="multistep__box js-wizard-input" data-type="product" data-id="<?php the_ID(); ?>">
           <input type="checkbox" id="product-<?php the_ID(); ?>"
                 name="product" value="<?php the_ID(); ?>">
           <figure class="js-prod-thumb multistep__thumb image__ar image__ar--11 image__ar--contain" data-id="<?php the_ID(); ?>">
             <?php the_post_thumbnail('full'); ?>
           </figure>
-          <h3 class="headline heaadline--secondary multistep__label" for="product-<?php the_ID(); ?>">
+          <label class="headline headline--secondary multistep__label" for="product-<?php the_ID(); ?>">
             <?php the_title(); ?>
-          </h3>
+          </label>
           <h4 class="headline headline--tertiary"><?php echo wc_price($price);?></h4>
         </div>
       </div>

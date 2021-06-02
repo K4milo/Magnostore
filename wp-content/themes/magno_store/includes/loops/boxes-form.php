@@ -4,7 +4,7 @@
    *
   */
 ?>
-  <div class="row">
+  <div class="row justify-content-center">
   <?php
     $args = [
     'post_type' => 'product',
@@ -24,14 +24,14 @@
         $slug = get_post_field('post_name', get_the_ID()); ?>
 
     <div class="col-6 col-md-3">
-      <div class="multistep__box js-wizard-input" data-id="<?php the_ID(); ?>">
+      <div class="multistep__box js-wizard-input js-box" data-type="box" data-id="<?php the_ID(); ?>">
         <input
               type="radio"
               id="product-<?php the_ID(); ?>"
               name="box"
               value="<?php the_ID(); ?>">
 
-        <figure class="js-prod-thumb multistep__thumb image__ar image__ar--11" data-id="<?php the_ID(); ?>">
+        <figure class="js-prod-thumb multistep__thumb image__ar image__ar--11" data-name="radio" data-id="<?php the_ID(); ?>">
             <?php the_post_thumbnail('full'); ?>
         </figure>
 
@@ -39,4 +39,6 @@
       </div>
     </div>
     <?php endwhile; ?>
+  </div>
+  <div class="row">
   </div>

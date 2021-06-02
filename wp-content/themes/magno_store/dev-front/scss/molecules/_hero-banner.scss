@@ -3,7 +3,8 @@
 
   &__image {
     margin: 0;
-    @include fluid-aspect(3 4, img);
+
+    @include fluid-aspect(3 6, img);
 
     @include from(l) {
       @include fluid-aspect(16 7, img);
@@ -11,16 +12,27 @@
   }
 
   &__caption {
-    position: absolute;
-    top: rem(40px);
-    width: 100%;
+    width: 90%;
     text-align: center;
+    top: rem(4px);
+
+    @include center('horizontal');
 
     @include from(l) {
       width: 50%;
       left: 60%;
       max-width: rem(430px);
       @include center('vertical');
+    }
+  }
+
+  &__icon {
+    font-size: rem(45px);
+    color: $primary;
+    margin: rem(20px) 0;
+
+    &:hover {
+      color: $secondary;
     }
   }
 }

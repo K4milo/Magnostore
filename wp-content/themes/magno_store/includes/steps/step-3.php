@@ -1,7 +1,10 @@
-<fieldset class="multistep__item hidden js-step" data-step="3">
+<fieldset class="multistep__item hidden js-step" aria-hidden="true" data-step="3">
   <div class="container">
     <header class="multistep__heading text-center">
-      <h3 class="header">Elige una tarjeta</h3>
+      <h3 class="multistep__title">
+        <span class="d-block eyebrow eyebrow--uppercase eyebrow--bd tipo-line--1">Elige</span>
+        <span class="d-block headline headline--med headline--italic tipo-line--08">Una tarjeta</span>
+      </h3>
     </header>
     <div class="multistep__cards">
     <?php

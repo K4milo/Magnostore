@@ -1,7 +1,10 @@
 .button {
   background-color: $primary;
+  border: rem(2px) solid $primary;
   display: block;
   transition: all .3s;
+
+  $self: &;
 
   &__content {
     color: $white;
@@ -12,9 +15,37 @@
     color: $white;
     @include font(30px);
     vertical-align: middle;
+
+    &--s {
+      @include font(16px);
+    }
   }
 
   &:hover {
     background-color: $secondary;
+    text-decoration: none;
+
+    #{$self}__content {
+      text-decoration: none;
+    }
+  }
+
+  &--negative {
+    background-color: $white;
+    color: $primary;
+
+    .button__content {
+      color: $primary;
+    }
+  }
+
+  &.active {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $white;
+
+    .button__content {
+      color: $white;
+    }
   }
 }

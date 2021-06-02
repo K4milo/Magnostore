@@ -4,7 +4,7 @@
   "description": "Tools to help while developing the theme",
   "scripts": {
     "build": "NODE_ENV=production webpack --progress --colors --debug --display-chunks",
-    "watch": "webpack --progress --colors --debug --display-chunks --watch"
+    "dev": "webpack --progress --colors --debug --display-chunks --watch"
   },
   "author": "Depura",
   "license": "AFL-3.0",

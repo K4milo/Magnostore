@@ -1,4 +1,4 @@
-<fieldset class="multistep__item hidden js-step" data-step="2">
+<fieldset class="multistep__item hidden js-step" aria-hidden="true" data-step="2">
   <div class="container">
     <h3 class="multistep__title">
       <span class="d-block eyebrow eyebrow--uppercase eyebrow--bd tipo-line--1">Elige</span>

@@ -1,6 +1,40 @@
 .multistep {
   background-color: $gray-lighter;
 
+  &__nav {
+   margin: rem(20px) 0;
+   justify-content: space-between;
+   text-align: center;
+
+   @include from(l) {
+    justify-content: center;
+    align-items: center;
+    margin-top: rem(60px);
+    margin-bottom: rem(90px);
+   }
+  }
+
+  &__nav-item {
+    display: block;
+    width: 48%;
+    margin-bottom: rem(16px);
+
+    @include from(l) {
+      width: auto;
+      margin: 0 rem(10px) rem(20px);
+    }
+  }
+
+  .nav-pills {
+
+    .multistep__nav-link {
+
+      &.active {
+        background-color: $secondary;
+      }
+    }
+  }
+
   &__heading {
     padding-top: rem(10px);
     padding-bottom: rem(16px);
@@ -16,8 +50,13 @@
   }
 
   &__item {
+    background-color: transparent;
     padding-top: rem(30px);
     padding-bottom: rem(30px);
+
+    &.hidden {
+      padding: 0;
+    }
   }
 
   &__box {
@@ -35,10 +74,11 @@
     }
 
     &.active {
-      background-color: $secondary;
+      background-color: $gray-text;
       transform: scale(1.05);
 
-      .multistep__label {
+      .multistep__label,
+      .headline {
         color: $white;
       }
     }
@@ -64,6 +104,10 @@
     }
   }
 
+  &__thumb {
+    background-color: $white;
+  }
+
   &__actions {
     display: flex;
     justify-content: center;
@@ -76,8 +120,17 @@
     }
   }
 
-  &__products {
+  &__b-products {
+    display: flex;
     align-items: flex-start;
     align-items: stretch;
+  }
+
+  &__b-box,
+  &__b-card {
+
+    .js-remove-prod {
+      display: none;
+    }
   }
 }

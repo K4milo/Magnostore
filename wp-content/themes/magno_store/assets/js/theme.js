@@ -148,12 +148,15 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var SELECTORS = {
+  btnFirst: '.js-first',
   steps: '.js-step',
   prev: '.js-prev',
   next: '.js-next',
   removeProd: '.js-remove-prod',
   prodThumb: '.js-prod-thumb',
   prodBar: '.js-products',
+  prodBox: '.js-box-bar',
+  prodCard: '.js-card-bar',
   cloned: '.js-cloned'
 };
 
@@ -244,12 +247,16 @@ var InputHandler = (function () {
   function InputHandler(context, input) {
     _classCallCheck(this, InputHandler);
 
+    this.btnFirst = null;
     this.context = context;
     this.input = input;
     this.inputs = null;
     this.prodBar = null;
+    this.prodBox = null;
+    this.prodCard = null;
     this.prodClones = null;
     this.prodId = null;
+    this.prodType = null;
   }
 
   _createClass(InputHandler, [{
@@ -257,6 +264,9 @@ var InputHandler = (function () {
     value: function init() {
       this.inputs = [].concat(_toConsumableArray(this.context.querySelectorAll(this.input)));
       this.prodBar = this.context.querySelector(SELECTORS.prodBar);
+      this.prodBox = this.context.querySelector(SELECTORS.prodBox);
+      this.prodCard = this.context.querySelector(SELECTORS.prodCard);
+      this.btnFirst = this.context.querySelector(SELECTORS.btnFirst);
       this.suscribe();
     }
   }, {
@@ -278,6 +288,7 @@ var InputHandler = (function () {
     key: 'inputEvents',
     value: function inputEvents(parent, input) {
       this.prodId = parent.dataset.id;
+      this.prodType = parent.dataset.type;
       var inputsWrapper = parent.parentNode.parentNode;
       var allInputs = [].concat(_toConsumableArray(inputsWrapper.querySelectorAll(this.input)));
       var inputType = input.getAttribute('type');
@@ -289,8 +300,9 @@ var InputHandler = (function () {
           });
         }
         parent.classList.add('active');
+        this.btnFirst.classList.remove('hidden');
 
-        this.handleClone(parent, this.prodId, inputType);
+        this.handleClone(parent, this.prodId, this.prodType);
       } else {
         parent.classList.remove('active');
         this.handleRemove(this.prodId);
@@ -300,7 +312,7 @@ var InputHandler = (function () {
     key: 'handleClone',
     value: function handleClone(input, id, type) {
       var thumbClone = input.querySelector(SELECTORS.prodThumb).cloneNode(true);
-      var inputName = input.getAttribute('name');
+      var prodType = type;
       var closeIcon = document.createElement('span');
 
       thumbClone.classList.add(CLASSES.cloned);
@@ -315,12 +327,6 @@ var InputHandler = (function () {
       if (this.prodClones) {
         this.prodClones.forEach(function (product) {
           var prodId = product.dataset.id;
-          var prodInputName = product.getAttribute('name');
-
-          if (type === 'radio' && prodInputName === inputName) {
-            product.remove();
-          }
-
           if (prodId === id) {
             product.remove();
           }
@@ -329,7 +335,16 @@ var InputHandler = (function () {
         this.cloneEvents(this.prodBar);
       }
 
-      this.prodBar.appendChild(thumbClone);
+      if (prodType === 'product') {
+        this.prodBar.appendChild(thumbClone);
+      } else if (prodType === 'box') {
+        if (this.prodBox.hasChildNodes()) this.prodBox.innerHTML = '';
+        this.prodBox.appendChild(thumbClone);
+      } else {
+        if (this.prodCard.hasChildNodes()) this.prodCard.innerHTML = '';
+        this.prodCard.innerHTML = '';
+        this.prodCard.appendChild(thumbClone);
+      }
     }
   }, {
     key: 'handleRemove',

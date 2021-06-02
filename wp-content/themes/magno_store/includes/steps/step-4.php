@@ -1,4 +1,4 @@
-<fieldset class="multistep__item hidden js-step" data-step="4">
+<fieldset class="multistep__item hidden js-step" aria-hidden="true" data-step="4">
   <div class="container">
     <header class="multistep__heading text-center">
       <h3 class="header">Resumen de tu compra</h3>

@@ -1,4 +1,4 @@
-<fieldset class="multistep__item show js-step" data-step="1">
+<fieldset class="multistep__item show js-step" aria-hidden="false" false data-step="1">
   <div class="container">
     <header class="multistep__heading">
       <h3 class="multistep__title">
@@ -10,12 +10,11 @@
       <?php
         /**
          * Call input products loop
-         *
          */
         get_template_part('includes/loops/boxes', 'form'); ?>
     </div>
     <div class="multistep__actions multistep__actions--center">
-      <button class="multistep__next button button--icon js-next" type="button">
+      <button class="multistep__next button button--icon hidden js-first js-next" type="button">
         <span class="eyebrow eyebrow--1 eyebrow--uppercase button__content" tabindex="-1">Añadir Productos</span>
         <span class="button__icon material-icons">keyboard_arrow_right</span>
       </button>
