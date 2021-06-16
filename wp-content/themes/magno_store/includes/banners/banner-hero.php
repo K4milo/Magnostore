@@ -16,19 +16,16 @@ if ($hero_banner) {
         $hero_sub_title = get_sub_field('hero_banner__subtitle');
         $hero_cta = get_sub_field('hero_banner__link');
     ?>
-      <figure class="hero-banner__image">
-        <?php
-        if (wp_is_mobile()):
-        ?>
-          <img src="<?php echo $hero_mobile['url']; ?>" class="image-fit--cover" alt="<?php echo $hero_mobile['alt']; ?>" />
-        <?php
-          else:
-        ?>
-          <img src="<?php echo $hero_desktop['url']; ?>" class="image-fit--cover" alt="<?php echo $hero_desktop['alt']; ?>" />
-        <?php
-          endif;
-        ?>
-      </figure>
+      <picture class="hero-banner__image">
+        <?php if ($hero_mobile) : ?>
+          <source media="(max-width: 799px)" srcset="<?php echo esc_url($hero_mobile['url']); ?>">
+        <?php endif;?>
+        <?php if ($hero_desktop) : ?>
+          <img class="image-fit--cover"
+            src="<?php echo esc_url($hero_desktop['url']); ?>"
+            alt="<?php echo esc_attr($hero_desktop['alt']); ?>"/>
+        <?php endif; ?>
+      </picture>
       <div class="hero-banner__caption text-align-center">
         <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
           <h1 class="brand-image brand--green">Magnostore</h1>

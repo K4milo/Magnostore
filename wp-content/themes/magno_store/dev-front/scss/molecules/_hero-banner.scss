@@ -2,6 +2,7 @@
   position: relative;
 
   &__image {
+    display: block;
     margin: 0;
 
     @include fluid-aspect(3 6, img);
